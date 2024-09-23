@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela de Cursos com Filtro</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <div class="table-container">
+    <div class="search-container">
+      <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome do curso...">
+      <select id="categoryFilter" onchange="filterTable()">
+        <option value="">Todas as Modalidades</option>
+        <option value="Exatas">Exatas</option>
+        <option value="Humanas">Humanas</option>
+        <option value="Biológicas">Biológicas</option>
+      </select>
+    </div>
+
+    <h2 id="resultado"></h2>
+
+    <table class="styled-table" id="courseTable">
+      <thead>
+        <tr>
+          <th>CURSO</th>
+          <th>RED</th>
+          <th>MAT</th>
+          <th>LIN</th>
+          <th>HUM</th>
+          <th>NAT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-category="Humanas">
+            <td>ADMINISTRAÇÃO - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>AGRONOMIA - BACHARELADO</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ENGENHARIA DE SOFTWARE</td>
+            <td>2</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ARQUITETURA E URBANISMO - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Artes">
+            <td>ARTES VISUAIS - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Artes">
+            <td>ARTES VISUAIS - LICENCIATURA</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>AUDIOVISUAL - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>CIÊNCIA DA COMPUTAÇÃO - BACHARELADO</td>
+            <td>2</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>CIÊNCIA DOS DADOS - TECNOLÓGICO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Biológicas">
+            <td>CIÊNCIAS BIOLÓGICAS - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Biológicas">
+            <td>CIÊNCIAS BIOLÓGICAS - LICENCIATURA</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>CIÊNCIAS CONTÁBEIS - BACHARELADO</td>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>CIÊNCIAS ECONÔMICAS - BACHARELADO</td>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>CIÊNCIAS SOCIAIS - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>DIREITO - BACHARELADO</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>EDUCAÇÃO DO CAMPO - LICENCIATURA</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Biológicas">
+            <td>EDUCAÇÃO FÍSICA - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Biológicas">
+            <td>EDUCAÇÃO FÍSICA - LICENCIATURA</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Biológicas">
+            <td>ENFERMAGEM - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ENGENHARIA AMBIENTAL - BACHARELADO</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ENGENHARIA CIVIL - BACHARELADO</td>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ENGENHARIA DE ALIMENTOS - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ENGENHARIA DE COMPUTAÇÃO - BACHARELADO</td>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ENGENHARIA DE PRODUÇÃO - BACHARELADO</td>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ENGENHARIA FLORESTAL - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ENGENHARIA MECÂNICA - BACHARELADO</td>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ENGENHARIA QUÍMICA - BACHARELADO</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>FILOSOFIA - LICENCIATURA</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>FÍSICA - LICENCIATURA</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>JORNALISMO - BACHARELADO</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>HISTÓRIA - LICENCIATURA</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>LETRAS - LICENCIATURA</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>MATEMÁTICA - LICENCIATURA</td>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>PEDAGOGIA - LICENCIATURA</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>PSICOLOGIA - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>SERVIÇO SOCIAL - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+
+        <tr data-category="Exatas">
+            <td>CIÊNCIAS ECONÔMICAS - BACHARELADO</td>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>MEDICINA - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>MEDICINA VETERINÁRIA - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+        </tr>
+        <tr data-category="Artes">
+            <td>MÚSICA - LICENCIATURA</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>NUTRIÇÃO - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ODONTOLOGIA - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr data-category="Humanas">
+            <td>PEDAGOGIA INTERCULTURAL INDÍGENA</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>QUÍMICA - BACHARELADO EM QUÍMICA TECNOLÓGICA</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>QUÍMICA - LICENCIATURA</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>TECNOLOGIA EM EDUCAÇÃO E PROCESSOS DE TRABALHO: ALIMENTAÇÃO ESCOLAR</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>TECNOLOGIA EM EDUCAÇÃO E PROCESSOS DE TRABALHO: SECRETARIA ESCOLAR</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>SISTEMAS DE INFORMAÇÃO - BACHARELADO</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>TECNOLOGIA DA INFORMAÇÃO - TECNOLÓGICO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>TURISMO - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr data-category="Exatas">
+            <td>ZOOTECNIA - BACHARELADO</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+        </tr>        
+    </tbody>
+</table>
+
+<div class="legenda">
+    LEGENDA: <br>
+    RED: Redação; MAT: Matemática e suas Tecnologias; LIN: Linguagens, Códigos e suas Tecnologias; <br>
+    HUM: Ciências Humanas e suas Tecnologias; NAT: Ciências da Natureza e suas Tecnologias.
+</div>
+
+</div>
+
+
+</body>
+</html>
